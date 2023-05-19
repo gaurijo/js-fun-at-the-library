@@ -20,10 +20,21 @@ function saveReview(review, reviews) {
     }
 }
 
-function calculatePageCount(modifiedTitle) {
-  var letters = modifiedTitle.replace(/[^a-zA-Z\s]/g, "");
-  var addPages = letters.length;
-  return addPages * 20;
+function calculatePageCount(modifiedTitle) { // function takes in existing function modifiedTitle as an argument (which adds 'the' before each title)
+  var letters = modifiedTitle.replace(/[^a-zA-Z\s]/g, ""); // use regex to replace any spaces or non-letter characters
+  var addPages = letters.length; // counts the number of letters in the title
+  return addPages * 20; // multiplies the number of letters by 20
+}
+
+function writeBook(bookTitle, bookCharacter, genre) { // writeBook function takes in 3 parameters - title, character and genre
+  var book = { // sets a variable book equal to attributes of title, mainCharacter, pageCount, and genre
+    title: bookTitle, // title attribute is set equal to whatever value bookTitle is
+    mainCharacter: bookCharacter, // mainCharacter attribute is set equal to whatever value bookCharacter is
+    pageCount: calculatePageCount(bookTitle), //pageCount attribute calls on the calculatePageCount function, which passes in a bookTitle
+    genre: genre //genre attribute is set equal to whatever value genre is 
+  };
+
+  return book
 }
 
 module.exports = {
@@ -31,6 +42,6 @@ module.exports = {
   buildMainCharacter,
   saveReview,
   calculatePageCount,
-  // writeBook,
+  writeBook,
   // editBook
 }
