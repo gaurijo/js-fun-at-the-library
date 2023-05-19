@@ -19,11 +19,18 @@ function saveReview(review, reviews) {
     reviews.push(review); // i don't have to set reviews equal to an empty array like in ruby?
     }
 }
+
+function calculatePageCount(modifiedTitle) {
+  var letters = modifiedTitle.replace(/[^a-zA-Z\s]/g, "");
+  var addPages = letters.length;
+  return addPages * 20;
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
+  calculatePageCount,
   // writeBook,
   // editBook
 }
