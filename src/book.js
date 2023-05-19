@@ -15,10 +15,9 @@ return mainCharacter; // return the character object
 }
 
 function saveReview(review, reviews) {
-
-  reviews.push(review); // i don't have to set reviews equal to an empty array like in ruby?
-
-
+  if (!reviews.includes(review)) {
+    reviews.push(review); // i don't have to set reviews equal to an empty array like in ruby?
+    }
 }
 module.exports = {
   createTitle,
