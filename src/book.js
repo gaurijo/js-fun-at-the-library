@@ -37,8 +37,8 @@ function writeBook(bookTitle, bookCharacter, genre) { // writeBook function take
   return book
 }
 
-function editBook(book) {
-  book.pageCount = book.pageCount * 0.75;
+function editBook(book) { //editBook takes in a parameter, book. The book object has a title, mainCharacter, pageCount and genre. 
+  book.pageCount = book.pageCount * 0.75; //it reassigns the pageCount attribute to equal the pageCount reduced by 0.75
 
   return book.pageCount;
 }
