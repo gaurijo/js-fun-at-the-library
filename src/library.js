@@ -1,7 +1,11 @@
-
+function createLibrary(name) {
+  var library = { name: name,
+                  shelves: {}};
+  return library;
+}
 
 module.exports = {
-  // createLibrary,
+  createLibrary,
   // addBook,
   // checkoutBook,
   // takeStock
